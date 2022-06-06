@@ -20,7 +20,7 @@ namespace venta_vehiculos_API.Servicios
         {
             clsConexion oConexion = new clsConexion();
 
-            oConexion.SQL = "vehiclo_select";
+            oConexion.SQL = "vehiculo_select";
             oConexion.StoredProcedure = true;
             List<Vehiculo> vehiculos = new List<Vehiculo>();
 
@@ -134,7 +134,7 @@ namespace venta_vehiculos_API.Servicios
         public string Actualizar()
         {
             clsConexion oConexion = new clsConexion();
-            oConexion.SQL = "usuario_update";
+            oConexion.SQL = "vehiculo_update";
             oConexion.StoredProcedure = true;
 
             oConexion.AgregarParametro("@id", System.Data.SqlDbType.Int, 20, vehiculoVM.id);

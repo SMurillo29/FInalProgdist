@@ -34,8 +34,8 @@
 
  create table vehiculo(
 	id int identity(1,1) primary key not null,
-	kilometraje NUMERIC(10,5)not null,
-	precio NUMERIC(10,5) not null,
+	kilometraje FLoat not null,
+	precio Float not null,
 	color varchar(30),
 	fktipo int not null,
 	fkmarca int not null,

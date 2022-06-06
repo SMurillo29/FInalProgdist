@@ -3,7 +3,7 @@
 create procedure vehiculo_select
 as
 begin 
-	select v.kilometraje, v.precio, v.color, t.id, t.nombre_tipo_vehiculo, m.id, m.nombre_marca from [dbo].[vehiculo] v
+	select v.id, v.kilometraje, v.precio, v.color, t.id, t.nombre_tipo_vehiculo, m.id, m.nombre_marca from [dbo].[vehiculo] v
 	inner join [dbo].[tipo_vehiculo] t on v.fktipo = t.id
 	inner join [dbo].[Marca] m on v.fkmarca = m.id
 
@@ -15,7 +15,7 @@ create procedure vehiculo_id_select
 as
 begin 
 
-	select v.kilometraje, v.precio, v.color, t.id, t.nombre_tipo_vehiculo, m.id, m.nombre_marca from [dbo].[vehiculo] v
+	select v.id, v.kilometraje, v.precio, v.color, t.id, t.nombre_tipo_vehiculo, m.id, m.nombre_marca from [dbo].[vehiculo] v
 	inner join [dbo].[tipo_vehiculo] t on v.fktipo = t.id
 	inner join [dbo].[Marca] m on v.fkmarca = m.id
 	where v.id = @id
