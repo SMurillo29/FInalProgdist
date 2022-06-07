@@ -1,8 +1,5 @@
 ﻿using libComunes.CapaDatos;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using venta_vehiculos_API.Models;
 using venta_vehiculos_API.ViewModel;
 
