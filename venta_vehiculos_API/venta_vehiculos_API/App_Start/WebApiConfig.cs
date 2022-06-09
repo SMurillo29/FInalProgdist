@@ -11,6 +11,8 @@ namespace venta_vehiculos_API
         {
             // Configuración y servicios de API web
 
+            config.EnableCors();
+
             // Rutas de API web
             config.MapHttpAttributeRoutes();
 

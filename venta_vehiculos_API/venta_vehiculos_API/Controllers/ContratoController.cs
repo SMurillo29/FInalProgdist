@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using venta_vehiculos_API.Models;
 using venta_vehiculos_API.Servicios;
 using venta_vehiculos_API.ViewModel;
 
 namespace venta_vehiculos_API.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ContratoController : ApiController
     {
         // GET: api/Estusiante

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace venta_vehiculos_API.Models
+﻿namespace venta_vehiculos_API.Models
 {
     public class Rol
     {

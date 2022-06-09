@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="venta_vehiculos_Movile.Views.VistaTVehiculoREST">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+
+            <Label Text="Tipo de vehiculo" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="txtID" FontSize="Small" TextColor="Black" PlaceholderColor="Gray" Placeholder="ID del tipo de vehiculo"></Entry>
+            <Entry x:Name="txtNombre" FontSize="Small" TextColor="Black" PlaceholderColor="Gray" Placeholder="Tipo de vehiculo"></Entry>
+
+            <Button Grid.Column="1" x:Name="btnGuardar" Text="Guardar" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Navy" TextColor="White" Clicked="btnGuardar_Clicked" ></Button>
+            <Button Grid.Column="1" x:Name="btnConsultar" Text="Consultar" FontSize="Medium" FontAttributes="Bold" BackgroundColor="ForestGreen" TextColor="White"  Clicked="btnConsultar_Clicked" ></Button>
+            <Button Grid.Column="1" x:Name="btnEliminar" Text="Eliminar" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Red" TextColor="White" Clicked="btnEliminar_Clicked"  ></Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
