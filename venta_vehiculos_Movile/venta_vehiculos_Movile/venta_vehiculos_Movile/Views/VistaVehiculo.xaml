@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="venta_vehiculos_Movile.Views.VistaVehiculo">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+
+            <Label Text="Vehiculo" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="txtID" FontSize="Small" TextColor="Black" PlaceholderColor="Gray" Placeholder="ID del tipo de vehiculo"></Entry>
+            <Entry x:Name="txtKilometraje" FontSize="Small" TextColor="Black" PlaceholderColor="Gray" Placeholder="Kilometraje del vehiculo"></Entry>
+            <Entry x:Name="txtPrecio" FontSize="Small" TextColor="Black" PlaceholderColor="Gray" Placeholder="Precio del vehiculo"></Entry>
+            <Entry x:Name="txtColor" FontSize="Small" TextColor="Black" PlaceholderColor="Gray" Placeholder="Color del vehiculo"></Entry>
+
+
+            <Picker x:Name="cboMarca" FontSize="Small"  TextColor="Black" ItemDisplayBinding="{Binding nombre_marca}" TitleColor="Gray" Title="Marca de vehiculo" 
+                    ItemsSource="{Binding Marcas}" SelectedItem="{Binding SelectedMarca}" HorizontalOptions="FillAndExpand" ></Picker>
+
+            <Picker x:Name="cboTipo" FontSize="Small"  TextColor="Black" ItemDisplayBinding="{Binding nombre_tipo_vehiculo}" TitleColor="Gray" Title="Tipo" 
+                    ItemsSource="{Binding ViewTVehiculos}" SelectedItem="{Binding SelectedViewTVehiculos}" HorizontalOptions="FillAndExpand" ></Picker>
+
+            <Button Grid.Column="1" x:Name="btnGuardar" Text="Guardar" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Navy" TextColor="White" Clicked="btnGuardar_Clicked" ></Button>
+            <Button Grid.Column="1" x:Name="btnConsultar" Text="Consultar" FontSize="Medium" FontAttributes="Bold" BackgroundColor="ForestGreen" TextColor="White" Clicked="btnConsultar_Clicked"></Button>
+            <Button Grid.Column="1" x:Name="btnEliminar" Text="Eliminar" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Red" TextColor="White" Clicked="btnEliminar_Clicked"></Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
