@@ -20,7 +20,7 @@ namespace venta_vehiculos_Movile.Views
             InitializeComponent();
             ListarTipos();
             ListarMarcas();
-           
+            ListarVehiculos();
         }
 
         private async void ListarTipos()
@@ -72,12 +72,15 @@ namespace venta_vehiculos_Movile.Views
 
                 await brocker.Insertar(vehiculo);
                 await DisplayAlert("Inserción de vehiculo", "Se guardó el vehiculo  " , "OK");
+                ListarVehiculos();
             }
             else
             {
                 await brocker.Actualizar(vehiculo);
                 await DisplayAlert("Actualización de marca", "Se Actualizó el vehiculo" , "OK");
-               
+                ListarVehiculos();
+
+
             }
 
         }
@@ -119,6 +122,7 @@ namespace venta_vehiculos_Movile.Views
                     return;
                 }
                 await DisplayAlert("Borrado completo", "Se borro el vehiculo con exito ", "OK");
+                ListarVehiculos();
             }
             else
             {
@@ -127,6 +131,11 @@ namespace venta_vehiculos_Movile.Views
 
         }
 
+        private async void ListarVehiculos()
+        {
+            Vehiculo vehiculo = new Vehiculo();
+            lstVehiculos.ItemsSource = await brocker.ConsultarTodos();
+        }
 
     }
 }

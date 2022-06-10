@@ -23,7 +23,35 @@
             <Button Grid.Column="1" x:Name="btnConsultar" Text="Consultar" FontSize="Medium" FontAttributes="Bold" BackgroundColor="ForestGreen" TextColor="White" Clicked="btnConsultar_Clicked"></Button>
             <Button Grid.Column="1" x:Name="btnEliminar" Text="Eliminar" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Red" TextColor="White" Clicked="btnEliminar_Clicked"></Button>
 
+            <ScrollView>
+                <CollectionView x:Name="lstVehiculos">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="1" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="60" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding id}" FontSize="12" HeightRequest="20"/>
+                                <Label Grid.Column="1" Text="{Binding id}" FontSize="12" HeightRequest="20"/>
+                                <Label Grid.Column="2" Text="{Binding fkmarca.nombre_marca}" FontSize="12" HeightRequest="20"/>
+                                <Label Grid.Column="3" Text="{Binding fktipo.nombre_tipo_vehiculo}" FontSize="12" HeightRequest="20"/>
+                                <Label Grid.Column="4" Text="{Binding precio}" FontSize="12" HeightRequest="20"/>
+                                <Label Grid.Column="5" Text="{Binding color}" FontSize="12" HeightRequest="20"/>
+                                <Label Grid.Column="6" Text="{Binding kilometraje}" FontSize="12" HeightRequest="20"/>
 
+
+                                <!--ImageButton Grid.Column="3" x:Name="btnAsignarCita" Source="Save.png" HeightRequest="25" BindingContext="{Binding IDDisponibilidad}" Clicked="btnAsignarCita_Clicked"></ImageButton-->
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

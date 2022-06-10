@@ -13,6 +13,7 @@ namespace venta_vehiculos_Movile.Views
         public VistaMarca()
         {
             InitializeComponent();
+            ListarMarca();
         }
 
         private async void btnGuardar_Clicked(object sender, EventArgs e)
@@ -39,11 +40,13 @@ namespace venta_vehiculos_Movile.Views
                 
                 await brocker.Insertar(marca);
                 await DisplayAlert("Inserción de marca", "Se guardó la marca  " + nombre, "OK");
+                ListarMarca();
             }
             else
             {
                 await brocker.Actualizar(marca);
                 await DisplayAlert("Actualización de marca", "Se Actualizó la marca" + nombre, "OK");
+                ListarMarca();
             }
 
         }
@@ -83,12 +86,20 @@ namespace venta_vehiculos_Movile.Views
                     return;
                 }
                 await DisplayAlert("Borrado completo", "Se borro el tipo de marca " + nombre, "OK");
+                ListarMarca();
             }
             else
             {
                 await DisplayAlert("Error", "Debe ingresar un id " + id, "OK");
             }
 
+        }
+
+
+        private async void ListarMarca()
+        {
+            Marca marca = new Marca();
+            lstVehiculos.ItemsSource = await brocker.ConsultarTodos();
         }
     }
 }

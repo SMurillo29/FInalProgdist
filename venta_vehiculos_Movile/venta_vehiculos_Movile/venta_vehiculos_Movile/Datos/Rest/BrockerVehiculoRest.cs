@@ -12,7 +12,7 @@ namespace venta_vehiculos_Movile.Datos.Rest
     class BrockerVehiculoRest
     {
         static readonly string BaseRest = "http://jramirgi68-001-site1.btempurl.com";
-        static readonly string BaseLocal = "http://172.21.176.1:50250";
+        static readonly string BaseLocal = "http://localhost:50250";
         static readonly string sRest = "/api/vehiculo";
         private bool Local;
         private string BaseURL;
@@ -20,13 +20,13 @@ namespace venta_vehiculos_Movile.Datos.Rest
         {
             Local = true;
         }
-        public async Task<List<VehiculoViewModel>> ConsultarTodos()
+        public async Task<List<Vehiculo>> ConsultarTodos()
         {
             if (!Local) { BaseURL = BaseRest + sRest; } else { BaseURL = BaseLocal + sRest; }
             HttpClient httpCliente = new HttpClient();
             string result = await httpCliente.GetStringAsync(BaseURL);
             //Se convierte la respuesta en objetos de la clase
-            return JsonConvert.DeserializeObject<List<VehiculoViewModel>>(result);
+            return JsonConvert.DeserializeObject<List<Vehiculo>>(result);
         }
         public async Task<Vehiculo> ConsultarXID(int id)
         {
